@@ -1,3 +1,3 @@
 export const detailsItemClassNames = {
-    hideButton: 'xivplan-DetailsItem__hide',
+    hideButton: 'bananaplan-DetailsItem__hide',
 };

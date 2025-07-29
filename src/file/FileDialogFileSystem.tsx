@@ -116,7 +116,7 @@ export const FileSystemNotSupportedMessage: React.FC<FileSystemNotSupportedMessa
             <div>
                 <p>
                     Your browser does not support the experimental File System API. You can download the plan as an{' '}
-                    <strong>.xivplan</strong> file, then drag and drop it onto the page to open it again.
+                    <strong>.bananaplan</strong> file, then drag and drop it onto the page to open it again.
                 </p>
                 <p>
                     To save files locally, use a Chromium-based browser such as{' '}

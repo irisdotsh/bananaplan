@@ -77,7 +77,7 @@ export default defineConfig(({ mode }) => ({
                     {
                         action: '/open',
                         accept: {
-                            'application/vnd.xivplan.plan+json': ['.xivplan'],
+                            'application/vnd.bananaplan.plan+json': ['.bananaplan'],
                         },
                     },
                 ],

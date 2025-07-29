@@ -438,7 +438,7 @@ class DirectoryTree {
             }
 
             if (handle.kind === 'file') {
-                if (!handle.name.endsWith('.xivplan')) {
+                if (!handle.name.endsWith('.bananaplan')) {
                     continue;
                 }
 

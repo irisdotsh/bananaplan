@@ -74,7 +74,7 @@ async function* getDownloadFiles(): AsyncGenerator<InputWithSizeMeta> {
         const scene = await openFileLocalStorage(file.name);
 
         yield {
-            name: file.name + '.xivplan',
+            name: file.name + '.bananaplan',
             lastModified: file.lastEdited,
             input: JSON.stringify(scene, undefined, 2),
         };

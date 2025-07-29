@@ -42,7 +42,7 @@ export function useFileLoaderDropTarget() {
                 return;
             }
 
-            if (file.name.endsWith('.xivplan')) {
+            if (file.name.endsWith('.bananaplan')) {
                 if (isDirty && !(await confirmUnsavedChanges())) {
                     return;
                 }
