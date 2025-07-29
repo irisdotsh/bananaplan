@@ -46,7 +46,10 @@ const ShareDialogBody: React.FC = () => {
     const { scene } = useScene();
     const { dispatchToast } = useToastController();
     const url = useMemo(() => getSceneUrl(scene), [scene]);
-    const link = shortenLink(url);
+
+    const link = async () => {
+        return shortenLink(url);
+    };
 
     const copyToClipboard = useCallback(async () => {
         await navigator.clipboard.writeText(url);
