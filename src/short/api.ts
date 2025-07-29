@@ -1,4 +1,5 @@
 const shortio = "https://api.short.io/links/tweetbot";
+
 export async function shortenLink(link: string): Promise<string> {
     const url = new URL(shortio);
     
