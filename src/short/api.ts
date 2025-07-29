@@ -13,14 +13,20 @@ export async function shortenLink(link: string): Promise<string> {
 
     try {
         const res = await fetch(url, options);
+
+        if (!res.ok) {
+            throw new Error(`HTTP error! status: ${res.status}`);
+        }
+
         const data = await res.json();
 
         if (data.shortURL) {
             return data.shortURL;
         } else {
-            console.error('shortURL not found in API response');
+            throw new Error('shortURL not found in API response');
         }
     } catch (err) {
-        console.error(err);
+        // Optionally, you could log the error here
+        throw err; // Re-throw for upstream handling
     }
 }
