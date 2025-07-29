@@ -21,6 +21,7 @@ import { useScene } from '../SceneProvider';
 import { sceneToText } from '../file';
 import { Scene } from '../scene';
 import { DownloadButton } from './DownloadButton';
+import { shortenLink } from "../short/api.ts";
 
 export interface ShareDialogButtonProps {
     children?: ReactNode | undefined;
@@ -45,18 +46,19 @@ const ShareDialogBody: React.FC = () => {
     const { scene } = useScene();
     const { dispatchToast } = useToastController();
     const url = useMemo(() => getSceneUrl(scene), [scene]);
+    const link = shortenLink(url);
 
     const copyToClipboard = useCallback(async () => {
         await navigator.clipboard.writeText(url);
         dispatchToast(<CopySuccessToast />, { intent: 'success' });
-    }, [url, dispatchToast]);
-
+    }, [link, dispatchToast]);
+    
     return (
         <HotkeyBlockingDialogBody>
             <DialogTitle>Share</DialogTitle>
             <DialogContent>
                 <Field label="Link to this plan">
-                    <Textarea value={url} contentEditable={false} appearance="filled-darker-shadow" rows={6} />
+                    <Textarea value={link} contentEditable={false} appearance="filled-darker-shadow" rows={6} />
                 </Field>
                 <p>
                     If your browser won&apos;t open the link, paste the text into{' '}
