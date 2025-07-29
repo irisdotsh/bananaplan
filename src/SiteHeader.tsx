@@ -3,7 +3,6 @@ import { WeatherMoonFilled, WeatherSunnyFilled } from '@fluentui/react-icons';
 import React, { HTMLAttributes, useContext } from 'react';
 import { OutPortal } from 'react-reverse-portal';
 import { AboutDialog } from './AboutDialog';
-import { ExternalLink } from './ExternalLink';
 import { HelpContext } from './HelpContext';
 import { PANEL_WIDTH } from './panel/PanelStyles';
 import { FileSource, useScene } from './SceneProvider';
