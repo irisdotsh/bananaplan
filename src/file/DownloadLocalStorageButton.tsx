@@ -10,7 +10,7 @@ export const DownloadLocalStorageButton: React.FC<ButtonProps> = ({ ...props }) 
 
     const [state, download] = useAsyncFn(async () => {
         const blob = await exportLocalStorageFiles();
-        downloadBlob(blob, `XIVPlan-export.zip`);
+        downloadBlob(blob, `BananaPlan-export.zip`);
     }, []);
 
     return (

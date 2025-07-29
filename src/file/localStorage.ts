@@ -7,12 +7,12 @@ interface FileMetadata {
 }
 
 const files = localforage.createInstance({
-    name: 'XIVPlan Files',
+    name: 'BananaPlan Files',
     storeName: 'files',
 });
 
 const metadata = localforage.createInstance({
-    name: 'XIVPlan File Metadata',
+    name: 'BananaPlan File Metadata',
     storeName: 'meta',
 });
 

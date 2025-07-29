@@ -45,8 +45,8 @@ export default defineConfig(({ mode }) => ({
             injectRegister: false,
             pwaAssets: { disabled: false, config: true, htmlPreset: '2023', overrideManifestIcons: true },
             manifest: {
-                name: 'XIVPlan',
-                short_name: 'XIVPlan',
+                name: 'BananaPlan',
+                short_name: 'BananaPlan',
                 description: 'FFXIV raid planner',
                 display: 'standalone',
                 theme_color: '#1e1e1e',

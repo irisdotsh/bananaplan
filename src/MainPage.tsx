@@ -51,7 +51,7 @@ const MainPageContent: React.FC = () => {
     );
 };
 
-const TITLE = 'XIVPlan';
+const TITLE = 'BananaPlan';
 
 function usePageTitle() {
     const { source } = useScene();

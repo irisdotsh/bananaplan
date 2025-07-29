@@ -75,7 +75,7 @@ export const SiteHeader: React.FC<HTMLAttributes<HTMLElement>> = ({ className, .
         <header className={mergeClasses(classes.root, className)} {...props}>
             <div className={classes.title}>
                 <Text size={titleSize} weight="semibold">
-                    XIVPlan
+                    BananaPlan
                 </Text>
                 {source && <SourceIndicator source={source} />}
             </div>
@@ -87,9 +87,6 @@ export const SiteHeader: React.FC<HTMLAttributes<HTMLElement>> = ({ className, .
                 Help
             </Link>
             <AboutDialog className={classes.link} />
-            <ExternalLink className={classes.link} href="https://github.com/joelspadin/xivplan" noIcon>
-                GitHub
-            </ExternalLink>
             <div>
                 <Button
                     appearance="subtle"

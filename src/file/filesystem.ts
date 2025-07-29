@@ -43,8 +43,8 @@ async function getFileStartIn() {
 
 const filePickerTypes: FilePickerAcceptType[] = [
     {
-        accept: { 'application/vnd.xivplan.plan+json': '.xivplan' },
-        description: 'XIVPlan Scene',
+        accept: { 'application/vnd.bananaplan.plan+json': '.bananaplan' },
+        description: 'BananaPlan Scene',
     },
 ];
 
@@ -67,8 +67,8 @@ export async function showOpenPlanPicker(): Promise<FileSystemFileHandle | undef
 
 export async function showSavePlanPicker(name?: string): Promise<FileSystemFileHandle | undefined> {
     let suggestedName = name ?? 'plan';
-    if (!suggestedName.endsWith('.xivplan')) {
-        suggestedName += '.xivplan';
+    if (!suggestedName.endsWith('.bananaplan')) {
+        suggestedName += '.bananaplan';
     }
 
     try {
@@ -93,7 +93,7 @@ export async function listDirectory(directory: FileSystemDirectoryHandle): Promi
     for await (const [name, handle] of directory.entries()) {
         switch (handle.kind) {
             case 'file':
-                if (name.endsWith('.xivplan')) {
+                if (name.endsWith('.bananaplan')) {
                     entries.push(handle);
                 }
                 break;
@@ -208,7 +208,7 @@ interface Schema extends DBSchema {
 
 const CURRENT_VERSION = 1;
 
-const db = openDB<Schema>('xivplan-files', CURRENT_VERSION, {
+const db = openDB<Schema>('bananaplan-files', CURRENT_VERSION, {
     upgrade(db, oldVersion, newVersion) {
         if (oldVersion > CURRENT_VERSION) {
             console.warn(`Files database version downgrade from ${oldVersion} to ${newVersion}. Resetting database.`);
