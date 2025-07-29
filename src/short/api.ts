@@ -1,7 +1,5 @@
-import {FileSystemFileSource} from "../SceneProvider.tsx";
-
 const shortio = "https://api.short.io/links/tweetbot";
-export async function shortenLink(link: string): Promise<void> {
+export async function shortenLink(link: string): Promise<string> {
     const url = new URL(shortio);
     
     url.search = new URLSearchParams({
@@ -15,7 +13,12 @@ export async function shortenLink(link: string): Promise<void> {
     try {
         const res = await fetch(url, options);
         const data = await res.json();
-        console.log(data);
+
+        if (data.shortURL) {
+            return data.shortURL;
+        } else {
+            console.error('shortURL not found in API response');
+        }
     } catch (err) {
         console.error(err);
     }
